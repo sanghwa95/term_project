@@ -1,0 +1,47 @@
+@charset "utf-8";
+.header {
+  background-color: #f1f1f1;
+  text-align: left;
+}
+.column {
+  float: left;
+}
+
+/* Left and right column */
+.column.wid15 {
+  width: 15%;
+}
+
+/* Middle column */
+.column.wid85 {
+  width: 85%;
+}
+
+.column.half {
+  width: 50%;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 900px) {
+  .column.wid15, .column.wid85 {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .column.half, .column.half {
+    width: 100%;
+  }
+}
+
+.menu a {
+  cursor:pointer;
+ }
+ .menu .hide {
+  display:none;
+ }
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--여기부터-->
+    <link href="/static/view.css" rel="stylesheet" /> 
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script> 
+    <!--여기까지 레이아웃, 펼쳐지는 메뉴 등과 같은 기능 라이브러리-->
+    <title>Student_page</title>
+</head>
+<body>
+  <div class = "header">
+    <div id = "user_info_area">
+      유저 정보 표시 영역
+      <br>
+      <br>
+    </div>
+  </div>
+
+  <div class = "row">
+
+    <div class="column wid15" > <!--이 영역이 메뉴 영역-->
+      <div class="lec_box" style="background-color:lightgray;height:auto;min-height:500px">
+        <a style="background-color:aqua;font-size:large" width="100">수업목록메뉴</a>
+        <div>
+          <ul>
+            <li class="menu"> <a>수업1</a>
+              <ul class="hide">
+                <li><a href="/stdnt_learn">Lesson 1</a></li>
+                <li>메뉴1-2</li>
+                <li>메뉴1-3</li>
+                <li>메뉴1-4</li>
+                <li>메뉴1-5</li>
+                <li>메뉴1-6</li>
+              </ul>
+            </li>
+            
+            <li class="menu"> <a>수업2</a>
+              <ul class="hide">
+                <li>메뉴2-1</li>
+                <li>메뉴2-2</li>
+                <li>메뉴2-3</li>
+                <li>메뉴2-4</li>
+                <li>메뉴2-5</li>
+                <li>메뉴2-6</li>
+              </ul>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+    <!--메뉴영역 끝-->
+    
+    <div class="column wid85"> <!--이 영역이 디스플레이 영역-->
+      <button>강의</button> <button>과제</button>
+      <div id="lec_discrip" style="background-color:blueviolet">
+        <h4>"수업이름"</h4>
+      </div>
+
+      <div id="lec_list_table" style="background-color:darksalmon;">
+        <h4>과제 내용 표시 영역</h4>
+        <br>
+        <br>
+        <br>
+      </div>
+      
+      <div id="notice_table" style="background-color:darkgoldenrod">
+        <h4>과제 제출 표시 영역</h4>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+    
+
+    </div>
+    <!--디스플레이 영역 끝-->
+  </div>  
+
+<!--여기 아래부터 자바 스크립트 코드.-->
+  <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+
+  <script>
+    /*펼쳐지는 메뉴 관련 Jquery 스크립트*/
+      $(document).ready(function(){
+        $(".menu>a").click(function(){
+        $(this).next("ul").toggleClass("hide");
+        });
+        });
+  </script>
+</body>
+</html>
